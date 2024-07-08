@@ -148,7 +148,24 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.product-desc span:nth-child(1){
+.product-desc button{
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    padding: 16px 0px 16px 0px;
+    background-color: #d84d5a;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    outline: none;
+    border: none;
+}
+.product-desc div{
+    width: 100%;
+    display: flex;
+}
+.product-desc div span:nth-child(1){
+    margin-right: auto;
     font-weight: 700;
     font-size: 29px;
     line-height: 40.6px;
@@ -233,6 +250,9 @@ footer{
     color: white;
 }
 @media only screen and (max-width: 600px) {
+    .product-desc div{
+        flex-direction: column;
+    }
     .products > h1{
         font-size: 38px;
     }
@@ -245,6 +265,9 @@ footer{
         display: grid;
         gap: 32px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .hero-content{
+        gap: 5px;
     }
     .footergrid{
         grid-template-columns: repeat(2, 1fr);
