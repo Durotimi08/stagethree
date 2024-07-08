@@ -35,6 +35,8 @@ body{
     margin-top: 120px;
     align-items: center;
     padding-inline: 96px;
+    gap: 20px;
+    overflow-x: auto;
 }
 .nav2 span{
     font-size: 24px;
@@ -63,11 +65,12 @@ body{
     background-color: #C3B9B7;
     height: 124px;
     top: 0;
-    left: 52px;
+    left: 0px;
 }
+
 .hero-content{
     position: absolute;
-    top: 150px;
+    top: 30px;
     left: 24px;
     display: flex;
     gap: 10px;
@@ -75,22 +78,22 @@ body{
 }
 .hero-content span:nth-child(1){
     font-weight: 700;
-    max-width: 670px;
-    font-size: 42px;
-    line-height: 58.8px;
+    max-width: 233px;
+    font-size: 25px;
+    line-height: 35.6px;
     font-family: 'Times New Roman', Times, serif;
 }
 .hero-content span:nth-child(2){
     font-weight: 400;
-    max-width: 482px;
+    max-width: 300px;
     font-size: 20px;
     line-height: 28px;
     color: #111111;
 }
 .hero-content span:nth-child(3){
     font-weight: 700;
-    max-width: 435px;
-    font-size: 29px;
+    max-width: 350px;
+    font-size: 20px;
     line-height: 40.6px;
     color: #ba1e2d;
 }
@@ -109,7 +112,6 @@ body{
 .products{
     margin-top: 100px;
     width: calc(100% - 100px);
-    padding-inline: 50px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -117,6 +119,7 @@ body{
 }
 .products > h1{
     font-weight: 700;
+    text-align: center;
     font-size: 42px;
     line-height: 58.8px;
     font-family: 'Times New Roman', Times, serif;
@@ -164,7 +167,7 @@ body{
     max-width: 1680px;
     display: grid;
     gap: 32px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     justify-content: center;
 }
 .latestgrid div{
@@ -184,6 +187,7 @@ body{
 }
 .latestgrid div article h1{
     margin-block: 0;
+    text-align: center;
     font-weight: 700;
     font-size: 42px;
     line-height: 58.8px;
@@ -231,24 +235,16 @@ footer{
     color: white;
 }
 @media only screen and (max-width: 600px) {
-    .productsgrid{
-        width: 100%;
-        max-width: 1680px;
-        display: grid;
-        gap: 32px;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+    .products > h1{
+        font-size: 38px;
     }
-
-}
-
-@media only screen and (max-width: 600px) {
-    .latestgrid{
-        width: 100%;
-        max-width: 1680px;
-        display: grid;
-        gap: 32px;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-
+    .logo{
+        position: relative;
+        left: 50px;
+        top: 0px;
+    }
+    .blocker{
+        width: 110px;
     }
     .productsgrid{
         width: 100%;
@@ -257,17 +253,65 @@ footer{
         gap: 32px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    .footergrid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .goaway{
+        display: none;
+    }
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (min-width: 600px) {
+    .hero-content{
+        top: 150px;
+    }
+    .hero-content span:nth-child(1){
+        max-width: 670px;
+        font-size: 42px;
+        line-height: 58.8px;
+    }
+    .hero-content span:nth-child(2){
+        max-width: 482px;
+    }
+    .hero-content span:nth-child(3){
+        font-weight: 700;
+        max-width: 435px;
+        font-size: 29px;
+        line-height: 40.6px;
+        color: #ba1e2d;
+    }
+    .latestgrid{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    }
     .productsgrid{
-        width: 100%;
-        max-width: 1680px;
-        display: grid;
-        gap: 32px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .footergrid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (min-width: 768px) {
+    .productsgrid{
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .footergrid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (min-width: 992px) {
     .nav2{
-        gap: 20px;
-        overflow-x: auto;
+        gap: unset;
+        overflow-x: unset;
+    }
+    .latestgrid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    }
+    .productsgrid{
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .footergrid{
+        grid-template-columns: repeat(5, 1fr);
     }
 }
